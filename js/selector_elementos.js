@@ -1,8 +1,14 @@
 export class SelectorElementos {
-    constructor(){}
+    constructor(root){
+        this._root = root;
+    }
+
+    get root(){
+        return this._root
+    }
 
     obtenerPorSelector(cssSelector){
-        return document.querySelector(cssSelector)
+        return this._root.querySelector(cssSelector)
     }
 
     agregarComportamientoAlDarClick(cssSelector, callback){
